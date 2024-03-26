@@ -47,9 +47,10 @@ app.use('/author-api',authorApp)
 app.use('/admin-api',adminApp)
 
 //deals with page refresh
-app.use((req,res,next)=>{
-    res.sendFile(path.join(__dirname,'../client/build/index.html'))
-})
+
+// app.use((req,res,next)=>{
+//     res.sendFile(path.join(__dirname,'../client/build/index.html'))
+// })
 
 //express error handler
 app.use((err,req,res,next)=>{

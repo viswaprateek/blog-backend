@@ -9,6 +9,11 @@ const path=require('path')
 // app.use(exp.static(path.join(__dirname,'../client/build')))
 //to parse the body of req
 app.use(exp.json())
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'https://celebrated-baklava-0cf54d.netlify.app' // Replace with your frontend's origin
+}));
 
 
 //connect to DB

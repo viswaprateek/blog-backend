@@ -7,7 +7,7 @@ const path=require('path')
 
 
 const corsOptions = {
-    origin: 'https://6603c0d214491e6735279037--celebrated-baklava-0cf54d.netlify.app', // Replace with your exact frontend URL
+    origin: 'https://6603c6dc8d264c6164cd7a29--celebrated-baklava-0cf54d.netlify.app', // Replace with your exact frontend URL
     methods: 'GET,POST,PUT,DELETE', // Allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
   };

@@ -4,6 +4,7 @@ const app=exp()
 require('dotenv').config() //process.env.PORT
 const mongoClient=require('mongodb').MongoClient;
 const path=require('path')
+const cors = require('cors');
 
 
 const corsOptions = {
@@ -17,7 +18,6 @@ const corsOptions = {
 // app.use(exp.static(path.join(__dirname,'../client/build')))
 //to parse the body of req
 app.use(exp.json())
-const cors = require('cors');
 
 // app.use(cors({
 //   origin: 'https://celebrated-baklava-0cf54d.netlify.app' // Replace with your frontend's origin

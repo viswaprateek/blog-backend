@@ -11,10 +11,17 @@ const path=require('path')
 app.use(exp.json())
 const cors = require('cors');
 
-app.use(cors({
-  origin: 'https://celebrated-baklava-0cf54d.netlify.app' // Replace with your frontend's origin
-}));
+// app.use(cors({
+//   origin: 'https://celebrated-baklava-0cf54d.netlify.app' // Replace with your frontend's origin
+// }));
 
+const corsOptions = {
+    origin: 'https://6603af7514491e5b3327908a--celebrated-baklava-0cf54d.netlify.app/', // Replace with your exact frontend URL
+    methods: 'GET,POST,PUT,DELETE', // Allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  };
+  
+  app.use(cors(corsOptions));
 
 //connect to DB
 mongoClient.connect(process.env.DB_URL)

@@ -4,14 +4,19 @@ const app=exp()
 require('dotenv').config() //process.env.PORT
 const mongoClient=require('mongodb').MongoClient;
 const path=require('path')
+// const cors = require('cors');
+
+
+
 const cors = require('cors');
+// const app = express();
 
-
-const corsOptions = {
-    origin: 'https://6603c6dc8d264c6164cd7a29--celebrated-baklava-0cf54d.netlify.app', // Replace with your exact frontend URL
-    methods: 'GET,POST,PUT,DELETE', // Allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  };
+// Allow requests from specific origin
+app.use(cors({
+  origin: 'https://6603c6dc8d264c6164cd7a29--celebrated-baklava-0cf54d.netlify.app',
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
   
   app.use(cors(corsOptions));
 //deploy react build in this server

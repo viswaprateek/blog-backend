@@ -5,6 +5,14 @@ require('dotenv').config() //process.env.PORT
 const mongoClient=require('mongodb').MongoClient;
 const path=require('path')
 
+
+const corsOptions = {
+    origin: 'https://celebrated-baklava-0cf54d.netlify.app', // Replace with your exact frontend URL
+    methods: 'GET,POST,PUT,DELETE', // Allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  };
+  
+  app.use(cors(corsOptions));
 //deploy react build in this server
 // app.use(exp.static(path.join(__dirname,'../client/build')))
 //to parse the body of req
@@ -15,13 +23,7 @@ const cors = require('cors');
 //   origin: 'https://celebrated-baklava-0cf54d.netlify.app' // Replace with your frontend's origin
 // }));
 
-const corsOptions = {
-    origin: 'https://6603af7514491e5b3327908a--celebrated-baklava-0cf54d.netlify.app/', // Replace with your exact frontend URL
-    methods: 'GET,POST,PUT,DELETE', // Allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  };
-  
-  app.use(cors(corsOptions));
+
 
 //connect to DB
 mongoClient.connect(process.env.DB_URL)
